@@ -1,0 +1,19 @@
+@charset "UTF-8";
+table
+	{	table-layout: auto;
+		margin: 0 auto;
+		text-align: center;
+		width:500px;
+		/*셀의 테두리를 분리하지 않고 한 줄로 그린다.
+			border-collapse:separate; (기본값)
+		*/
+		border-collapse:collapse;
+	}
+	td,th,table{
+		border-bottom: 1px solid gray;
+		height: 2em;
+	}
+	thead {
+		color: white;
+		background-color: gray;
+	}

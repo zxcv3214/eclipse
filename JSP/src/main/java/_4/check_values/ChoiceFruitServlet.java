@@ -4,7 +4,6 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 import java.io.*;
-import java.util.Iterator;
 @WebServlet("/ex1/_4.check_values/choiceFruit")
 public class ChoiceFruitServlet extends jakarta.servlet.http.HttpServlet {
 
@@ -32,12 +31,37 @@ public class ChoiceFruitServlet extends jakarta.servlet.http.HttpServlet {
 		 */	
 			System.out.println("request.gerParameter(\"fruit\")) =>"+ request.getParameter("fruit"));
 			String[] f = request.getParameterValues("fruit");
+			out.println("<html><head><style>");
+			out.println("body{background:black;}");
+			out.println("table{background:yellow;"
+					+ "	margin:0 auto;"
+					+ "top:30%;"
+					+ "position:relatave;}");
+			out.println("td{color:red;"
+					+ "font-size:20px;"
+					+ "text-align:center;"
+					+ "border:1px solod black;"
+					+ "height:2em;"
+					+ "width:200px;");
+			out.println("</style></head>");
+			out.println("<body><table><tbody><tr>");
 			
-			System.out.println("==== 선택한 모드 과일 시작 ====");
-			for(String fruit : f) {
-				System.out.println(fruit);
+			for(int num = 0; num < f.length; num++) {
+				out.println("<td>" + f[num] + "</td>");
 			}
-			System.out.println("==== 선택한 모든 과일 끝====");
+			out.println("</tr><tr>");
+			for (int num = 0; num < f.length; num++ ) {
+				out.println("<td><img width=128 height=128 src='../../image/"+ f[num]+ "'></td>");
+			}
+			out.println("</tr></tbody></table></body></html>");
+			out.close();
+			
+//			System.out.println("==== 선택한 모드 과일 시작 ====");
+//			for(String fruit : f) {
+//				System.out.println(fruit);
+//			}
+//			System.out.println("==== 선택한 모든 과일 끝====");
+			
 			
 	}
 

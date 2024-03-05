@@ -70,15 +70,15 @@ $(function(){
 			return false;
 		}
 		//우편번호
-		if($('#post1').val().trim()){
+		if(!$('#post1').val().trim()){
 			alert("우편변호는 입력하세요.");
 			($('#post1')).focus();
 			return false;
 		}
 		//isNumberic = 매개변수가 숫자인지 확인해준다.
-		if(!$.isNumeric($('#post1').val())) {
+		if($.isNumeric($('#postcode').val())) {
 			alert('우편번호는 숫자만 입력 가능합니다.');
-			($('#post1').val()).focus();
+			($('#postcode').val()).focus();
 			return false;
 		}
 		//주소

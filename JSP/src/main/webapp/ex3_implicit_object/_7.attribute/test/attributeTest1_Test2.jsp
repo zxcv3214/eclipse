@@ -17,7 +17,7 @@
 			session.setAttribute("address", address);
 			session.setAttribute("tel", tel);
 		%>
-	<h2>Session 영역에 저장할 내용들</h2>
+		<h2>Session 영역에 저장할 내용들</h2>
 	<h3><%=application.getAttribute("name")%>님 정보가 모두 저장되었습니다.</h3>
 	<a href="attributeTest1_Test3.jsp">확인하러 가기</a>
 	

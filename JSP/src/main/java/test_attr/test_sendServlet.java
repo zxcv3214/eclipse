@@ -7,7 +7,7 @@ import jakarta.servlet.http.*;
 import java.io.*;
 
 
-@WebServlet("/ex1/test_attr/send")
+@WebServlet("/ex4_layout/bootstap/send")
 public class test_sendServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	

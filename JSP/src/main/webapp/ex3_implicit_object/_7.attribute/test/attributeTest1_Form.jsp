@@ -9,18 +9,15 @@
 </head>
 <body>
 	<h1>영역과 속성 테스트</h1>
-	
-	
 	<form action="attributeTest1_Test1.jsp" method="post">
-	<h2>Application 영역에 저장할 내용들</h2>
-	  	<b>이름</b>
-	  	<input type="text" id="name" name="name" placeholder="Enter name" required>
-	  	<b>아이디</b>
-	  	<input type="text" id="id" name="id" placeholder="Enter id" required>
-	  	<div class="clearfix">
-	  	<button type="submit" class="submitbtn" value="submitbtn">Submit</button>
-	  		
-	  	</div>
-	  </form>
+		<h2>Application 영역에 저장할 내용들</h2>
+		<b>이름</b>
+		<input type="text" id="name" name="name" placeholder="Enter name" required>
+		<b>아이디</b>
+		<input type="text" id="id" name="id" placeholder="Enter id" required>
+		<div class="clearfix">
+		<button type="submit" class="submitbtn" value="전송">Submit</button>	  		
+		</div>
+	</form>
 </body>
 </html>

@@ -11,8 +11,9 @@
 	<h1>영역과 속성 테스트</h1><br>
 		<%
 			String name = request.getParameter("name");
-	  		application.setAttribute("name",name);
 	  		String id = request.getParameter("id");
+	  		
+	  		application.setAttribute("name",name);
 	  		application.setAttribute("id", id);
 		%>
 		

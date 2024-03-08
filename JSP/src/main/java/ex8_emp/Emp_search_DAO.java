@@ -23,9 +23,11 @@ public class Emp_search_DAO {
 			DataSource ds = (DataSource) init.lookup("java:comp/env/jdbc/OracleDB");
 			conn = ds.getConnection();
 			
-			String select_sql = "selsct * from emp where ?=?";
+			String select_sql = "selsct * from emp where ? = '%' + '%' ";
 			
 			pstmt=conn.prepareStatement(select_sql);
+			
+			
 			rs=pstmt.executeQuery();
 			
 			while (rs.next()) {

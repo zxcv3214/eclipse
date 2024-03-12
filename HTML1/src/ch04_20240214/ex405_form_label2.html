@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선택 라벨 예제</title>
+</head>
+<body>
+	<p>라벨의 텍스트를 클릭해도 됩니다.
+		label태그안에 input태그를 작성합니다.
+	</p>
+	<form action="result.html">
+		성별: &nbsp;
+		<label>남성
+		<input type="radio" name="gender" id="male" value="male" checked>
+		</label>
+		<label>여성
+		<input type="radio" name="gender" id="female" value="female">
+		</label>
+		<br>
+		<hr>
+		<input type="submit" value="전송">
+		<input type="reset" value="취소">
+	</form>
+</body>
+</html>

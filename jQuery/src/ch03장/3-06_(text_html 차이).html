@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+
+
+<script src="../js/jquery-3.7.1.js"></script>
+	<!-- text() 메서드 : 문서 객체 내부의 글자와 관련된 기능을 수행합니다.
+		 형식)
+		 1. $(selector).text();			선택자의 텍스트 노드의 값을 가져옵니다.
+		 2. $(selector).text(value);	선택자의 텍스트 노드의 값을 가져옵니다.
+		 3. $(selector).text(function(index, text){}); -->
+<script>
+	$(function() {
+		$('div:first').text('<span>하하</span>'); //하하
+		$('div').eq(1).text('<span>호호</span>'); //호호
+		
+			console.log(('div:eq(3)').text());
+			console.log(('div:eq(3)').html());
+	});
+</script>
+<body>
+	<div>월요일</div>
+	<div>화요일</div>
+	<div>수요일</div>
+	<div><span>하하</span></div>
+</body>
+</html>

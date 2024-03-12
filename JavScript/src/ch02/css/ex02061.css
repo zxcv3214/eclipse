@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+body,h2,form,table,tr,th,td,input {
+	padding: 0;
+	margin: 0 auto;
+}
+
+body {
+	width: 1000px;
+}
+
+h2 {
+	text-align: center;
+	padding: 10px;
+}
+
+table,th,td{
+	text-align: center;
+	border: 1px solid gray;
+}
+table {
+	width: 700px;
+	height: 200px;
+}
+
+th, td{
+	font-size: 25px;
+}
+
+tr td:first-child {
+	background-color: yellow;
+}
+
+tr:last-child {
+	background-color: green;
+}
+tr:last-child>td:first-child {
+	background-color: white;
+}
+
+input {
+	width : 75px;
+	height : 25px;
+	text-align: center;
+	font-size: 25px;
+}
+
+input:focus {
+	border: 2px solid red;
+	 outline: none;
+}
+td:nth-child(4) input:focus, #totalNumber:focus {
+	outline: none;
+	}

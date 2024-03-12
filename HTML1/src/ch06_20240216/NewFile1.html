@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.5;
+}
+
+.container {
+  padding: 16px;
+}
+
+ legend {
+ 	font-size : 25px;
+	text-align: center;
+	padding: 10px;
+}
+
+/* The Modal (background) */
+.modal {
+	width:500px;
+	margin : 30px auto;
+ 	overflow: auto; /* Enable scroll if needed */
+  	box-shadow: 10px 10px 5px #ccc;
+  	background-color: whitesmoke;
+ 
+}
+fieldset {
+	border: none;
+}
+</style>
+</head>
+<body>
+
+<div id="id01" class="modal">
+ 
+  <form class="modal-content animate" action="/action_page.php" method="post">
+  <fieldset>
+  	<legend>로그인 폼</legend>
+  
+  
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+</fieldset>	
+    
+  </form>
+</div>
+</body>
+</html>

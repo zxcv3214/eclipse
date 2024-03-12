@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>innerHTML</title>
+<!-- 문서 객체 가져오기 (2)
+		1. getElementsByName(namevalue) 
+		   태그 name 속성이 namevalue와 일치하는 문서 객체를 배열로 가져옵니다.
+		   
+		2. getElementsTagName(tagName)
+		   태그 이름이 tagName과 일치하는 모든 태그의 문서 객체를 배열로 가져옵니다.
+		   
+		3. getElementsByClassName(className)
+		   클래스 속성이 className과 일치하는 문서 객체를 배열로 가져옵니다.
+		
+		4. querySelector(selector)
+		   selector와 일치하는 첫 번째 문서객체를 가져옵니다.
+		   
+		5. querySelectorAll(selector)
+		   selector와 일치하는 모든 문서객체를 배열로 가져옵니다.
+		   
+-->
+	<script type="text/javascript">	
+		window.onload = function () {
+		//문서 객체를 가져옵니다.
+		var clock1= document.getElementById('clock');
+		
+		//매 1초마다 함수를 실행합니다.
+		setInterval(function() {
+			clock1.innerHTML = new Date().toLocaleString();
+		}, 1000);
+		
+	};
+		
+
+	</script>
+</head>
+<body>
+    <h1 id="clock"></h1>
+</body>
+</html>

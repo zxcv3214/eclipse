@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<style>
+	input {
+	width: 100px;
+	height: 40px;
+	color: white;
+	border: none;
+	outline: none;
+}
+	input:hover {
+	opacity: 0.8;
+	cursor: pointer;
+}
+	input:disabled:hover {
+	opacity: 1;
+	cursor: not-allowed;
+}
+	#start {
+	background: green;
+	}
+	#start:disabled, #end:disabled {
+	background: gray;
+}
+	#end {
+	background: red;
+	}
+</style>
+<script src="../js/jquery-3.7.1.js"></script>
+<!--
+ 	trigger() : 이벤트를 강제로 발생 시킵니다.
+ 				형식) trigger(eventname)
+	 -->
+<script>
+	$(function() {
+		//이벤트 연결
+		$('#start').click(function () {
+			$(this).html(function (index, html) {
+				$(this).html +  '★';
+				$('#start').attr('disabled',true)
+				$('#start').val('시작중~!');
+			});
+	});
+			const timer = setInterval(function () {
+				$('#start').trigger('click');
+				
+			}, 1000);
+			
+			$('#end').click(function() {
+				alert("트리거 종료");
+				$('#end').attr('disabled',true)
+				$('#start').attr('disabled',false)
+				$('#start').val('트리거 시작');
+				clearInterval(timer);//타이머 종료
+		});
+});
+</script>
+<body>
+	<h1>Start:</h1>
+	<h1>Start:</h1>
+	
+	<input type="button" value="트리거 시작" id="start">
+	<input type="button" value="트리거 종료" id="end">
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>전환효과의 지정</title>
+<style type="text/css">
+	div {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	}
+	div:hover {
+	width: 500px;
+	height: 500px;
+	background-color: green;
+	border-radius: 50%;
+	
+	transition-property :width,height, 
+						 background-color,
+						 border-radius;
+	transition-duration : 5s, 5s;
+	
+}
+</style>
+</head>
+<body>
+	<body>
+	<!--  빨간색 박스가 마우스를 올리면 크기가 커지고 녹색 박스로 4초동안 점진적으로 변하게 해보세요 -->
+	<h1>전환(transition)</h1>
+
+	<p>박스에 마우스를 올려보세요</p>
+	<div></div>
+</body>
+</body>
+</html>

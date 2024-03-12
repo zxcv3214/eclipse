@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<style>
+	div {width: 100px; height: 100px;}
+	.red{background-color: red;}
+	.orange{background-color: orange;}
+	.yellow{background-color: yellow;}
+</style>
+
+<script src="../js/jquery-3.7.1.js"></script>
+
+<script>
+	$(function() {
+		let message ='';
+		$('div').css('background-color', function(index, style){
+			message+=index+'번째 background-color 속성값은 ' + style+ '\n';
+		});
+		//출력
+		console.log(message);
+	});
+</script>
+<body>
+	<div class="red"></div>
+	<div class="orange"></div>
+	<div class="yellow"></div>
+</body>
+</html>

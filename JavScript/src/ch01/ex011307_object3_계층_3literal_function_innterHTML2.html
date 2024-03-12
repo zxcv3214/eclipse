@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Using Object</title>
+<meta charset="UTF-8">
+</head>
+<style>
+	#property caption
+	{	font-size: 14px;
+					font-weight: bold;
+					margin: 0.5em
+	}
+	/*
+		table-layout 속성 : auto (각 열의 크기를 자동으로 계산 - 기본값)
+	*/
+	#property
+	{	table-layout: auto;
+		margin: 0 auto;
+		text-align: center;
+		width:500px;
+		/*셀의 테두리를 분리하지 않고 한 줄로 그린다.
+			border-collapse:separate; (기본값)
+		*/
+		border-collapse:collapse;
+	}
+	td,th,#property{
+		border-bottom: 1px solid gray;
+		height: 2em;
+	}
+	thead {
+		color: navy;
+		background-color: olive;
+	}
+	tbody tr:hover {
+		background-color: lightgray;
+	}
+</style>
+<body>
+	<script type="text/javascript">
+	var book = {
+			title : "수미네 반찬" ,
+			prublisher : "성안당" ,
+			author : "김수미" ,
+			price : 15300 ,
+			info : {
+				pages : 442 ,
+				date : "2010년 1월 30일" ,
+				ISBN10 : "8970506470" ,
+				size : "188*243mm"
+			}
+		};
+	
+	book.print = function() {
+	
+	var list = "<table id=property>";
+	list += "<caption> 신상 정보 </caption>";
+	list += "<thead>";
+	list += "<tr>";
+	list += "<th> 항목(속성: property) </th> <th> 내용 (값 : value) </th>";
+	list += "</tr>";
+	list += "</thead>";
+	list += "<tbody>";
+	for(var p in book) {
+		if(p !='print') {
+			if (typeof (book[p]) != "object"){
+			list += "<tr>";
+			list += "<td> book." + p + "</td>";
+			list += "<td>" + book[p];
+			if (p == 'price')
+				list += "원";
+			list += "</td></tr>";
+		}else {
+			for(var q in book.info){
+			list +="<tr>";
+			list +="<td> book." + p +"." + q +"</td>";
+			list +="<td>" + book.info[q];
+			if (q == "pages")
+				list +="페이지";
+			list += "</td></tr>";
+			}
+		}
+	}
+	}//for
+		list += "</tbody> </table>";
+		document.body.innerHTML = list;
+	}//print
+	book.print();
+	
+	</script>
+</body>
+</html>

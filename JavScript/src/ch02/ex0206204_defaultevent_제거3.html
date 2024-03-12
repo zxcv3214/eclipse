@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="css/ex02062.css" type="text/css" rel="stylesheet">
+</head>
+	<script>
+	function whenSubmit() {
+		
+	//var nameform = document.getElementById('name');
+	var passform = document.getElementById('pass');
+	var passcheckform = document.getElementById('pass-check');
+	
+	var nameform = document.getElementsByTagName('input');
+		
+	if(!nameform[0].value.trim()){
+	//(nameform.value.trim() == '')
+		alert("이름을 입력하세요.");
+		nameform[0].focus();
+		return false;
+	
+	}else if(pass.value.trim() == ''){
+		alert('비밀번호를 입력하세요.');
+		pass.focus();
+		return false;
+	
+	}else if (passcheckform.value.trim() =='') {
+		alert('비밀번호 확인을 입력하세요.');
+		passcheckform.focus();
+		return false;
+	}
+	
+	//비밀번호가 같은지 확인합니다.
+	if(passform.value == passcheckform.value) {
+		alert ('성공');
+	} else {
+		alert('비밀번호가 다릅니다. 다시 입력해 주세요.');
+		passform.value='';
+		passcheckform.value='';
+		pass.focus();
+		return false;
+	}
+}
+	</script>
+<body>
+<!-- 인라인 모델의 form태그 onsubmit 이벤트 속성에 return 함수() 형태로 입력 합니다.
+	1. 이름이 값을 확인하고 빈문자열인경우
+		(1)alert()를 이용해서 '이름을 입력하세요' 라는 대화상자가 나타납니다.
+		(2)이름에 포커스를 줍니다.
+		(3)submit 이벤트가 발생하지 않도록 합니다.
+		
+	2.비미번호와 비밀번화확인도 1번과 같은 작업을 합니다.
+	
+	3.이름, 비밀번호, 비밀번호확인을 모두 입력한 경우
+		(1) 비밀번호와 비밀번호확인 값이 같은지 확인합니다.
+		(2) 같으면 alert()를 이용해서 '성공' 이라는 대화상자가 나타나고 action 속성의 값으로 이동합니다.
+		(3) 다르다면 alert()를 이용해서 '비밀번호가 다릅니다. 다시 입력해 주세요' 라는 대화상자가 나타나고
+			비밀번호와 비밀번호확인의 값을 빈문자열로 설정하고 비밀번호에 포커스를 준 뒤
+			submit 이벤트가 발생자히 않도록 합니다. -->
+			
+<!-- 아무것도 입력하지 않고 제출을 클릭해 봅시다. -->
+	<form onsubmit="return whenSubmit()" action="ex0206102_formhanding1_id_원_제거_콤마_toLocaleString_addEventListener_문제.html">
+		<fieldset>
+			<legend>회원가입 폼</legend>
+			<label for="name">이름</label>
+			<input type="text" name="name" id="name"><br>
+			
+			<label for="pass">비밀번호</label>
+			<input type="password" name="pass" id="pass"><br>
+			
+			<label for="pass-check">비밀번호 확인</label>
+			<input type="password" id="pass-check"> <br>
+			
+			<input type="submit" value="제출">
+		</fieldset>
+	</form>
+	
+</body>
+</html>

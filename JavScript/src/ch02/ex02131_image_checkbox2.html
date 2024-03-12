@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>모든 체크 박스 선택/해제</title>
+
+</head>
+
+<body>
+<form>
+	<label>
+		<input type="checkbox" name="all" value="모두 선택/해제">ALL <br>
+	</label>
+	<label>
+		<input type="checkbox" name="icon" value="../image/20.png">image1
+	</label>
+	<label>
+		<input type="checkbox" name="icon" value="../image/21.png">image2
+	</label>
+	<label>
+		<input type="checkbox" name="icon" value="../image/22.png">image3 
+	</label>
+</form>
+
+<script>
+	var all = document.querySelector('input[name=all]');
+		box =document.querySelectorAll('input[name=icon]');
+		all.addEventListener('click', show);
+		
+	function show() {
+		
+		for(var i=0; i<box.length; i++){
+			box[i].checked = all.checked;
+			console.log(all.checked);
+		}	
+	}
+</script>
+</body>
+</html>

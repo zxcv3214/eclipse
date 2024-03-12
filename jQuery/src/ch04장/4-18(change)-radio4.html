@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<script src="../js/jquery-3.7.1.js"></script>
+
+<!-- 입력 양식 (input태그, textarea)에서 발생하는 이벤트르 사용합니다.
+		1. change 이벤트 : 입력 양식의 내용을 변경할 때 발생합니다.
+			(select, input태그의 type 속성이 checkbox와 radin인 경우)
+			
+		2. submit 이벤트 : submit 버튼을 누를 때 발생합니다. -->
+<script>
+	$(function() {
+		$('input:radio').change(function (event){
+			alert($(this).val());
+		});
+	});
+</script>
+<body>
+	<label>
+		<input type="radio" name="hoho" value="1">사과
+	</label>
+	<label>
+		<input type="radio" name="hoho" value="2">배
+	</label>
+	<label>
+		<input type="radio" name="hoho" value="3">복숭아
+	</label>
+</body>
+</html>

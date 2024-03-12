@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<style>
+	* {
+	text-align: center;
+	}
+	table {
+	margin: 0 auto;
+	width: 50%;
+	font-size: 20px;
+	border-collapse: collapse;
+	}
+	tr{
+	height: 50px;
+	border-bottom: 1px solid gray;
+	}
+	tbody tr:hover {
+	background-color: orange;
+	}
+	caption {
+	color: green;
+	font-size: 30px;
+	font-weight: bold;
+}
+</style>
+<script src="../js/jquery-3.7.1.js"></script>
+<!-- 	
+	find() 메서드 : 특정 태그를 선택합니다.
+	$.parseXML() 메서드 : 문자열을 XML 문서 객체로 변경합니다.
+ 	text() 메서드 : 태그 사이의 글자를 가져옵니다.
+	 	-->
+<script>
+	$(function() {
+		//변수 선언합니다.
+		let xml ='<friends>';
+			xml +='	<friend>';
+			xml +='		<name>오바마</name>';
+			xml +='		<language>영어</language>';
+			xml +='	</friend>';
+			xml +='	<friend>';
+			xml +='		<name>하니</name>';
+			xml +='		<language>중국어</language>';
+			xml +='	</friend>';
+			xml +='	<friend>';
+			xml +='		<name>세종대왕</name>';
+			xml +='		<language>한국어</language>';
+			xml +='	</friend>';
+			xml +='</friends>';
+			
+		//변수를 선언합니다.
+		//문자열을 XML 문서 객체로 변경합니다.
+		const xmlDoc = $.parseXML(xml);
+			
+		//$(xmlDoc) : 문서 객체 xmlDoc을 $()메서드에 넣어 사용합니다.
+		//friend 태그는 세 개므로 each()메서드를 사용합니다.
+		let output='';
+		output += '<table><caption>친구들 명단</caption>';
+		output += '<tr><th>번호</th><th>이름</th><th>언어</th></tr>';
+	
+			$(xmlDoc).find('friend').each(function(index, item){
+			output += '<tr>';
+			output += '<td>' + (index+1) + '</td>';
+			output += '<td>' + $(item).find('name').text() + '</td>';
+			output += '<td>' + $(item).find('language').text() + '</td>';
+			output += '</tr>';
+		});
+			output += '</table>';
+			$("body").html(output);
+	});
+</script>
+<body>
+
+</body>
+</html>

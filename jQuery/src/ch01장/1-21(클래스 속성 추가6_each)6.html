@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<!-- item 또는 select 클래스를 가지는 태그 선택자 -->
+<style>
+	.high-light0 {
+	background-color: yellow;
+	}
+	.high-light1 {
+	background-color: orange;
+	}
+	.high-light2 {
+	background-color: blue;
+	}
+	.high-light3 {
+	background-color: green;
+	}
+	.high-light4 {
+	background-color: red;
+	}
+</style>
+<!--
+	 attr() 메서드 : 문서 객체에 속성을 추가하는 메서드
+	 removeAttr() 메서드 : 문서 객체에 속성을 제거하는 메서드
+-->
+<script>
+	
+	$(function() {
+		let color = $('h1');
+			$.each(color, function(index,item) {
+				//$(item).addClass('high-light'+index);
+				$(this).addClass('high-light'+index);
+			});
+	});
+	
+</script>
+</head>
+<body>
+<body>
+	<h1> item - 0 </h1>
+	<h1> item - 1 </h1>
+	<h1> item - 2 </h1>
+	<h1> item - 3 </h1>
+	<h1> item - 4 </h1>
+</body>
+</body>
+</html>

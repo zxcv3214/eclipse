@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<style>
+	.reverse {
+		background-color: black;
+		color: white;
+	}
+	div {
+	margin: 1em;
+	}
+</style>
+<script src="../js/jquery-3.7.1.js"></script>
+<!--
+ 	one() : 이벤트 한 번씩만 실행합니다.
+	 -->
+<script>
+	$(function() {
+		let count=0;
+		//이벤트 연결
+		$('div').one('click',function () {
+			$(this).html(function (index, html) {
+				return'<mark>이벤트가 발생했습니다.</mark>' + count++
+			});
+	});
+});
+</script>
+<body>
+	<div>월요일</div>
+	<div>화요일</div>
+	<div>수요일</div>
+</body>
+</html>

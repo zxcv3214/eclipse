@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>innerHTML</title>
+<!-- 문서 객체 가져오기 (2)
+		1. getElementsByName(namevalue) 
+		   태그 name 속성이 namevalue와 일치하는 문서 객체를 배열로 가져옵니다.
+		2. getElementsTagName(tagName)
+		   태그 이름이 tagName과 일치하는 모든 태그의 문서 객체를 배열로 가져옵니다.
+		   
+		3. getElementsByClassName(className)
+		   클래스 속성이 className과 일치하는 문서 객체를 배열로 가져옵니다.
+		
+		4. querySelector(selector)
+		   selector와 일치하는 첫 번째 문서객체를 가져옵니다.
+		   
+		5. querySelectorAll(selector)
+		   selector와 일치하는 모든 문서객체를 배열로 가져옵니다.
+		   
+-->
+	<script type="text/javascript">	
+		//window.onload = function () {
+		window.onclick = function () {
+		//문서 객체를 가져옵니다.
+		var header= document.getElementById('header');
+		
+		//문서 객체의 스타일을 바꿔줍니다.
+		header.style.border = '2px solid black';
+		header.style.color='green';
+		/*
+			CSS에서 background-color은 하이픈(-) 없애고
+					끊겨진 단어의 첫 글자를 대문자로 변경하면 됩니다.
+					예)background-color  ->   backgroundColor
+		*/
+		header.style.backgroundColor='orange';
+		//CSS에서의 속성 font-family => fontFamily
+		header.style.fontFamily = '굴림';
+		
+		
+	};
+	</script>
+</head>
+<body>
+	<h1 id="header">Header</h1>
+</body>
+</html>

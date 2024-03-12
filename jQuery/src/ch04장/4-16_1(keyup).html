@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<style>
+div {
+	margin: 0 auto;
+	width: 500px
+}
+
+h3 {
+	background: #a4d7e4;
+	text-align: center;
+	width: 30%;
+	height: 3em;
+	line-height: 3em;
+}
+
+span {
+	color: red
+}
+
+textarea {
+	resize: none;
+}
+
+textarea:focus {
+	border: 2px solid green;
+	outline: none
+}
+</style>
+<script src="../js/jquery-3.7.1.js"></script>
+	<!-- 
+		-->
+<script>
+//이벤트를 연결합니다.
+
+	$(function() {
+		//이벤트를 연결합니다.
+		$('textarea').keyup(function (index, item) {
+			
+			let maxlength = $('textarea').attr('maxlength');
+			let typelength = $('textarea').val().length;
+			console.log($('textarea').val().length);
+			let typing = maxlength - typelength;
+			$('h3').text('남은 글자수:');
+			$('h3').append('<span>'+typing+'</span>');
+		});
+});
+
+	
+</script>
+<body>
+	<div>
+		<p>지금 내 생각을 150자로 정리하세요.</p>
+		<h3>최대 150자</h3>
+		<textarea rows="5" cols="70" maxlength="150"></textarea>
+	</div>
+</body>
+</html>

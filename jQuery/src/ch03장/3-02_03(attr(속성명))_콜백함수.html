@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<script src="../js/jquery-3.7.1.js"></script>
+<!-- 
+	3. $(selector).attr(name, function(index, attr){});
+	-->
+<script>
+	$(function() {
+		$('img').attr('src', function(index , attrValue){
+			let s = `index = ${index}, ${attrValue}`;
+			console.log(s);
+		});
+	});
+</script>
+<body>
+	<img alt="5.png" src="../image/5.png">
+	<img alt="6.png" src="../image/6.png">
+	<img alt="7.png" src="../image/7.png">
+</body>
+</html>

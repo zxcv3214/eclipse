@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>overflow 속성 - 콘텐츠 박스의 크기보다 텍스트의 양이 많을 경우 처리 방법</title>
+<style type="text/css">
+	p {
+	border: medium double black;
+	float: left;
+	width: 22%;
+	height: 140px;
+	}
+	/*초과된 콘텐츠가 박스의 아래쪽에 이어서 나타난다.*/
+	#introl1 {
+	overflow: visible
+	}
+	/*초과된 콘텐츠가 잘려서 안보인다. */
+	#introl2 {
+	overflow: hidden;
+	}
+	/*스크롤 바를 이용해서 볼 수 있다.*/
+	#introl3 {
+	overflow: scroll;
+	}
+	/*콘텐츠가 박스를 초과할 경우 스크롤 바를 나타난다.*/
+	#introl4 {
+	overflow: auto;
+	}
+</style>
+</head>
+<body>
+	<h3>5.5 새로운 문서 표준 HTML5</h3>
+	
+	<p id="introl1">
+	[visible]<br>
+	하이퍼 텍스트 마크업 언어 
+	( 영어: Hyper Text Markup Language, HTML , 문화어: 초본문표식달기언어, 하이퍼본문표식달기언어)는 
+	웹 페이지 표시를 위해 개발된 지배적인 마크업 언어다. 
+	또한, HTML은 제목, 단락, 목록 등과 같은 본문을 위한 구조적 의미
+	</p>
+	
+	<p id="introl2">
+	[hidden]<br>
+	하이퍼 텍스트 마크업 언어 
+	( 영어: Hyper Text Markup Language, HTML , 문화어: 초본문표식달기언어, 하이퍼본문표식달기언어)는 
+	웹 페이지 표시를 위해 개발된 지배적인 마크업 언어다. 
+	또한, HTML은 제목, 단락, 목록 등과 같은 본문을 위한 구조적 의미
+	</p>
+	
+	<p id="introl3">
+	[scroll]<br>
+	하이퍼 텍스트 마크업 언어 
+	( 영어: Hyper Text Markup Language, HTML , 문화어: 초본문표식달기언어, 하이퍼본문표식달기언어)는 
+	웹 페이지 표시를 위해 개발된 지배적인 마크업 언어다. 
+	또한, HTML은 제목, 단락, 목록 등과 같은 본문을 위한 구조적 의미
+	</p>
+	
+	<p id="introl4">
+	[auto]<br>
+	하이퍼 텍스트 마크업 언어 
+	( 영어: Hyper Text Markup Language, HTML , 문화어: 초본문표식달기언어, 하이퍼본문표식달기언어)는 
+	웹 페이지 표시를 위해 개발된 지배적인 마크업 언어다. 
+	또한, HTML은 제목, 단락, 목록 등과 같은 본문을 위한 구조적 의미
+	</p>
+</body>
+</html>

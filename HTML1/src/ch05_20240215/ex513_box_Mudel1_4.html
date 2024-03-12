@@ -1,0 +1,100 @@
+<!-- 아래 조건에 맞는 css를 작성해 보세요
+1. div 요소에 box-sizing 속성의 값을 content-box로 설정합니다.
+2. id=first인 요소에 빨간색 배경을 설정합니다.
+3. id=second 인 요소에 가로 100px, 세로 100px 크기의 orange 색의 박스 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>박스 모델(box Model) : box-sizing:content-box</title>
+	<!-- 각 HTML 태그 요소를 하나의 박스 형태로 간주합니다.
+	 	 이 박스는 내용(content), 패딩(padding), 테두리(border), 마진(margin)으로 구성합니다.
+	 	 (1) 내용(content) : 요소의 실제 내용을 포함하는 영역입니다.
+	 	 (2) 패딩(padding) : 컨텐츠와 테두리 사이의 여백 영역입니다.
+	 	 (3) 테두리(border) : 요소 주위에 표시되는 선이나 경계입니다.
+	 	 (4) 마진(margin)  : 요소와 주변 요소 사이의 간격 영역입니다.
+	 	 
+	 	 *  box-sizing : content-box는 CSS 속성 중 하나로,
+	 	 	박스 모델에서 요소의 크기 계산 방식을 지정하는 데 사용됩니다.
+	 	 	기본적으로 box-sizing 속석의 값은 content-box로 설정되어 있습니다.
+	 	 	width와 height 속성은 오로지 content만 포함하여 측정되며,
+	 	 	padding, border, margin을 포함하지 않습니다.
+	 	-->
+<style type="text/css">
+	div {
+	box-sizing: content-box;
+	}
+	#first {
+	background: red;
+	}	 
+	#second {
+	width: 100px;
+	height: 100px;
+	background-color: orange;
+	}
+	/*가로 100px + 20*2px, 세로 100px + 20*2px 크기의 yellow 색의 박스*/
+	#third {
+	background-color: yellow;
+	width: 100px;
+	height: 100px;
+	padding: 20px;
+	}
+	/*	padding(내부 공백), margin(외부 공백)은 위, 오른쪽, 아래, 왼쪽 4가지의 값을 갖는다,
+				예) padding의 값을 위 오른쪽 아래 왼쪽 모두 10px 적용하려면
+				padding :10px 10px 10px 10px ; 또는
+				padding : 10px; 작성해야한다.
+							또는
+				padding-top :10px;	 padding-right:10px;
+				padding-bottom:10px; padding-left:10px;
+				
+				예 padding : 10px 5px;
+						의미) 위, 아래는 10px가 적용되고 오른쪽,왼쪽은 5px가 적용된다.
+				
+				예 padding : 10px 7px 8px;
+						의미) 위 10px가 적요오디고 오른쪽,왼쪽은 7px가 적용되고
+							 아래는 8px가 적용된다.
+		
+	*/
+	#third_clip {
+	background-color: gray;
+	width: 100px;
+	height: 100px;
+	padding: 20px;
+	border-width:1px;
+	border-style: solid;
+	border-color: black;
+	background-clip: content-box; 
+	}
+	/*
+		(1)
+		border : 1px     solid    black;
+		의미    : 굵기      스타일    색상
+		
+		또는 
+			border-width : 1px; border-style:solid; border-color:black;
+				위, 오른쪽, 아래, 왼쪽 모두 같은 속석값으로 적용하며
+			border를  1px 굵기의 검은색 석모양으로 나타냅니다
+		
+		(2)
+			가로 100px, 세로 100px 크기의 yellow 색의 박스
+			background-clip : content-box;라고 설정하면 padding 영역은 색상이 나타나지 않습니다.
+			
+	*/
+	#fourth {
+	background-color: green;
+	width: 100px;
+	height: 100px;
+	padding: 20px;
+	margin: 20px;}
+</style>
+</head>
+<body>
+	<div id="first">first</div>
+	<div id="second">second</div>
+	<div id="third">third</div>
+	<div id="third_clip">third_clip</div>
+	<div id="fourth">fourth</div>
+	<div id="fifth">fifth</div>
+</body>
+</html>

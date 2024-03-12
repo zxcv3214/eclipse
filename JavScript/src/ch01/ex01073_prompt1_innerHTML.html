@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>prompt : 사용자로부터 입력 받을 수 있는 대화 상자</title>
+<meta charset="UTF-8">
+<style type="text/css">
+	#books caption
+	{	font-size: 14px;
+					font-weight: bold;
+					margin: 0.5em
+	}
+	/*
+		table-layout 속성 : auto (각 열의 크기를 자동으로 계산 - 기본값)
+	*/
+	#books
+	{	table-layout: auto;
+		margin: 0 auto;
+		text-align: center;
+		width:500px;
+		/*셀의 테두리를 분리하지 않고 한 줄로 그린다.
+			border-collapse:separate; (기본값)
+		*/
+		border-collapse:collapse;
+	}
+	td,th,#books{
+		border-bottom: 1px solid gray;
+		height: 2em;
+	}
+	thead {
+		color: white;
+		background-color: gray;
+	}
+	tbody tr:hover {
+		background-color: lightgray;
+	}
+</style>
+</head>
+<body>
+	<script type="text/javascript">
+	/* prompt() 함수는 문자열만 입력받을 수 있다.
+		* 형식 result = prompt()
+		* 형식 result = prompt(message)
+		* 형식 resilt = prompt(message, value)
+		
+		* result는 사용자가 입력 한 텍스트가 포함된 문자열이거나 null(취소인 경우) 입니다.
+		
+		* message는 사용자에게 표시 할 텍스트 문자열입니다.
+		
+		* value는 텍스트 입력 필드에 표시되는 기본값을 포함하는 문자열입니다.
+	*/
+	var answer1 = prompt("1순위 책 제목을 입력하세요.");
+	var answer2 = prompt("2순위 책 제목을 입력하세요.");
+	var answer3 = prompt("3순위 책 제목을 입력하세요.");
+	
+	var list = "<table id=books>";
+	list += "<caption> 베스트 셀러 </caption>";
+	list += "<thead>";
+	list += "<tr>";
+	list += "<th> 순위 </th>";
+	list += "<th> 제목 </th>";
+	list += "</tr>";
+	list += "</thead>";
+	list += "<tbody>";
+	list += "<tr> <td> 1 </td> <td> "+ answer1 + "</td> </tr>";
+	list += "<tr> <td> 2 </td> <td> "+ answer2 + "</td> </tr>";
+	list += "<tr> <td> 3 </td> <td> "+ answer3 + "</td> </tr>";
+	list += "</tbody>";
+	list += "</table>";
+	
+	document.body.innerHTML += list;
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+
+<script src="../js/jquery-3.7.1.js"></script>
+<!--
+ 	trigger() : 이벤트를 강제로 발생 시킵니다.
+ 				형식) trigger(eventname)
+	 -->
+<script>
+	$(function() {
+		//이벤트 연결
+		$('h1').click(function () {
+			$(this).html(function (index, html) {
+				return html + '★';
+			});
+	});
+});
+</script>
+<body>
+	<h1>Start :</h1>
+	<h1>Start :</h1>
+</body>
+</html>

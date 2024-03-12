@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<!-- item 또는 select 클래스를 가지는 태그 선택자 -->
+<style>
+	
+</style>
+<!--
+	 attr() 메서드 : 문서 객체에 속성을 추가하는 메서드
+	 removeAttr() 메서드 : 문서 객체에 속성을 제거하는 메서드
+-->
+<script>
+	$(function() {
+		setTimeout(function() {
+		const che = $('input:checked').val();
+		alert(che);
+		$('img').attr('src',che);
+		}, 3000)
+	});
+	
+</script>
+</head>
+<body>
+<body>
+<h3>선택한 그림 출력</h3>
+<hr>
+<div> radio 버튼을 클릭하면 이미지가 바뀝니다.</div>
+	<form>
+		<label><input type="radio" name="icon" value="../image/1.png">image1</label>
+		<label><input type="radio" name="icon" value="../image/2.png" checked>image2</label>
+		<label><input type="radio" name="icon" value="../image/3.png">image3</label>
+		<img src="../image/2.png">
+	</form>
+</body>
+</body>
+</html>

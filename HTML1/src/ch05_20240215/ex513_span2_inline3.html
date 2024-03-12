@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>display : none 적용 예</title>
+<style type="text/css">
+	
+	div:hover+span {
+		display: block;
+	}
+	
+	span {
+		display :none;
+		background-color: pink;
+		width: 500px;
+		height: 100px;
+		text-align: center;
+		box-sizing:border-box;
+		padding: 35px 0px;
+	}
+
+</style>
+</head>
+<body>
+	<div>여기에 커서를 갖다 놓으세요</div>
+  <span>나는 보여요</span>
+</body>
+</html>

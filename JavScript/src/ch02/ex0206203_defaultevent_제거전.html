@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="css/ex02062.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<!-- 
+	디폴트 이벤트 : 이벤트가 발생했을 때 기본적으로 실행되는 동작을 말합니다.
+	예를 들어 a태그는 클릭하면 다른 페이지로 이동하는데 이것이 a태그가 가진 디폴트 이벤트입니다.
+	또한 입력 양식의 submit 버튼을 누르면 자동으로 입력 양식을 서버로 데이터를 전송하는 것이 디폴트 입니다.
+	
+	디폴트 이벤트 제거하는 방법
+	1. obj.onsubmit = function () {
+			.......
+			return false;
+	} 
+	
+	2. function whenSubmit() {
+			...
+			return false;
+	}
+	<form onsubmit="return whenSubmit()">
+	
+	3. event.preventDefault()를 사용하는 경우
+	<a href="http://www.naver.com" onclick="event.preventDefault()">
+	
+	4.<form id="login" action="ex0201_domtree.html">
+	
+	function whenSubmit(event) {
+				.....
+				event.preventDefault();
+	}
+	
+	documnet.querySelector("#login").addEventListener("submit", whenSubmit)
+	
+	
+	입력한 값들의 유효성 검사나 ajax 에서 사용합니다
+	
+-->
+
+<!-- 아무것도 입력하지 않고 제출을 클릭해 봅시다. -->
+	<form id="my_form" action="ex0206102_formhanding1_id_원_제거_콤마_toLocaleString_addEventListener_문제.html">
+		<fieldset>
+			<legend>회원가입 폼</legend>
+			<label for="name">이름</label>
+			<input type="text" name="name" id="name"><br>
+			
+			<label for="pass">비밀번호</label>
+			<input type="text" name="pass" id="pass"><br>
+			
+			<label for="pass-check">비밀번호 확인</label>
+			<input type="password" id="pass-check"> <br>
+			<!-- input요소에 onclick="event.preventDefault() 추가하면 값이 전달되지않는다.-->
+			<input type="submit" value="제출" onclick="event.preventDefault()">
+		</fieldset>
+	</form>
+	
+</body>
+</html>

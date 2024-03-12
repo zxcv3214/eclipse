@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<script src="../js/jquery-3.7.1.js"></script>
+<!-- 
+	attr() 메서드 
+		1. $(selector).attr(name);
+		2. $(selector).attr(name, value);
+		3. $(selector).attr(name, function(index, attr){});
+		
+		jQuery 위치 필터 선택자
+			요소:eq(n) : 선택한 요소의 인덱스 번호에 해당하는 문서 객체를 선택합니다.(0, 1, 2, 3, 4, ...)
+	-->
+		
+<script>
+	$(function() {
+		//img 태그의 속성 'width'의 값을 300px으로 설정합니다.
+		$('img').attr('width', 300);
+	});
+</script>
+<body>
+	<img alt="5.png" src="../image/5.png">
+	<img alt="6.png" src="../image/6.png">
+	<img alt="7.png" src="../image/7.png">
+</body>
+</html>

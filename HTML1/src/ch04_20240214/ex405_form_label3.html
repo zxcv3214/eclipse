@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선택 라벨 예제</title>
+</head>
+<body>
+	<p>라벨의 텍스트를 클릭해도 됩니다.
+		label태그안에 input태그를 작성합니다.
+	</p>
+	<form action="result.html">
+		<h3>오늘의 점심 메뉴는?</h3>
+		<label>
+		<input type="radio" name="foot" id="jajangmyeon" value="jajangmyeon" checked>
+		짜장면
+		<img alt="jajangmyeon" src="../image/짜장면.jpeg" width="100px">
+		
+		</label>
+		<label>
+		<input type="radio" name="foot" id="jjamppong" value="jjamppong">
+		짬뽕
+		<img alt="jjamppong" src="../image/짬뽕.jpeg" width="100px">
+		
+		</label>
+		<label>
+		<input type="radio" name="foot" id="sweet and sour pork" value="sweet and sour pork">
+		탕수육
+		<img alt="sweet and sour pork" src="../image/탕수육.jpeg" width="100px">
+		</label>
+		
+		<br>
+		<hr>
+		<input type="submit" value="전송">
+		<input type="reset" value="취소">
+	</form>
+</body>
+</html>

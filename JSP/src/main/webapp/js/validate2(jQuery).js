@@ -6,7 +6,6 @@ $(function(){
 			alert("ID를 입력하세요.");
 			($('#id')).focus();
 			return false;
-
 		}
 		//비밀번호
 		if(!$('#pass').val().trim()) {

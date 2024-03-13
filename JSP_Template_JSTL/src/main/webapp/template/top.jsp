@@ -17,14 +17,14 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <a class="navbar-brand " href="templatetest">액션태그</a>
+  <a class="navbar-brand " href="templatetest.net">액션태그</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse"
   		  data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
  <div class="collapse navbar-collapse flex-row-reverse" id="collapsibleNavbar">
     <ul class="navbar-nav">
- 	<c:if test="${!empty sesstionScope.id }">
+ 	<c:if test="${!empty sessionScope.id }">
       <li class="nav-item"><a class="nav-link">${id}님이 로그인 되었습니다.</a></li>
       <li class="nav-item"><a class="nav-link" href="update.net">정보수정</a></li>
       <c:if test="${sessionScope.id=='admin'}">

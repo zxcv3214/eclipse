@@ -20,3 +20,34 @@ insert into template_join
 (id, password, jumin, email, gender,hobby,post,address,intro)
 values('admin','1234','900909-1234567','admin@naver.com','m',
 		'공부,운동','12345','서울시 종로구','좋아요.');
+		
+insert into template_join
+(id, password, jumin, email, gender,hobby,post,address,intro)
+values('admin','1234','856204-1234567','admin@naver.com','m',
+		'공부,운동','12345','서울시 종로구','좋아요.');
+insert into template_join
+(id, password, jumin, email, gender,hobby,post,address,intro)
+values('aaaa1','1234','752310-2234567','admin@naver.com','f',
+		'낚시,운동','12345','서울시 종로구','좋아요.');
+insert into template_join
+(id, password, jumin, email, gender,hobby,post,address,intro)
+values('bbbb2','1234','625201-2234567','admin@naver.com','f',
+		'공부,운동','12345','서울시 강남구','날씨가 좋아요.');		
+insert into template_join
+(id, password, jumin, email, gender,hobby,post,address,intro)
+values('cccc3','1234','000909-1204767','admin@naver.com','m',
+		'등산,운동','32345','서울 서대문구','좋아요.');
+insert into template_join
+(id, password, jumin, email, gender,hobby,post,address,intro)
+values('dddd4','1234','980120-1234567','admin@naver.com','m',
+		'공부,운동','12345','서울시 종로구','좋아요.');
+insert into template_join
+(id, password, jumin, email, gender,hobby,post,address,intro)
+values('eeee5','1234','900909-1234567','admin@naver.com','m',
+		'공부,운동','12345','서울시 마포구','따뜻한 날씨.');
+insert into template_join
+(id, password, jumin, email, gender,hobby,post,address,intro)
+values('ffff6','1234','900909-2234567','admin@naver.com','f',
+		'공부,운동,등산','12345','서울시 종로구','ㅎㅇㅎㅇ.');
+		
+select * from template_join;

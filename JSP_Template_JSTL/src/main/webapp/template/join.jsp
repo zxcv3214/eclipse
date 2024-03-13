@@ -38,6 +38,7 @@
 			<input type="text" name="email" id="email"> @ 
 			<input type="text" name="domain" id="domain"> 
 			<select name="sel" id="sel">
+				<option value="">직접입력</option>
 				<option value="naver.com">네이버</option>
 				<option value="daum.net">다음</option>
 				<option value="nate.com">네이트</option>
@@ -65,7 +66,7 @@
 		<input type="text" size="50" name="address" id="address">
 
 	<label>자기소개</label>
-		<textarea rows="10" cols="intro" id="intro" name="intro"></textarea>
+		<textarea rows="10" id="intro" name="intro"></textarea>
 	<div class="clearfix">
 		<button type="submit" class="signupbtn">회원가입</button>
 		<button type="reset" class="cancelbtn">취소</button>

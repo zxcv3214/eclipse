@@ -42,6 +42,13 @@ public class Template_join {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
+	public String getGenderView() {
+		if(gender.equals("m")) {
+			return "남자";
+		}else {
+			return "여자";
+		}
+	}
 	public String getHobby() {
 		return hobby;
 	}

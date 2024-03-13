@@ -11,13 +11,12 @@ import net.common.action.ActionForward;
 import net.template.db.DAO;
 import net.template.db.Template_join;
 
-public class JoinProcessAction implements Action {
+public class UpdateProcessAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		String id= request.getParameter("id");
+String id= request.getParameter("id");
 		
 		String password = request.getParameter("pass");
 		
@@ -45,12 +44,12 @@ public class JoinProcessAction implements Action {
 		
 		DAO dao = new DAO();
 		
-		int result = dao.insert(join);
+		int result = dao.update(join);
 		
 		HttpSession session = request.getSession();
-		String message="회원가입 성공입니다.";
-		if(result !=1)
-			message="회원 가입 실패 입니다.";
+		String message="회원 정보 성공입니다.";
+		if(result != 1)
+			message="회원 정보 실패 입니다.";
 		session.setAttribute("message", message);
 		
 		ActionForward forward = new ActionForward();
@@ -58,4 +57,5 @@ public class JoinProcessAction implements Action {
 		forward.setPath("templatetest.net");
 		return forward;
 	}
+
 }

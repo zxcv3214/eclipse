@@ -18,5 +18,4 @@ public class JoinAction implements Action {
 		forward.setPath("/template/join.jsp");
 		return forward;
 	}
-
 }

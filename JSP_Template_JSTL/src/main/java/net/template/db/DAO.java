@@ -273,4 +273,37 @@ public class DAO {
 		}	// finally
 		return list;
 	}
+	public Template_join delete(String id) {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		int result = 0;
+		try {
+			Context init = new InitialContext();
+			DataSource ds = (DataSource) init.lookup("java:comp/env/jdbc/OracleDB");
+			conn = ds.getConnection();
+			
+			String delete_sql = "delete from template_join where id=?";
+			pstmt=conn.prepareStatement(delete_sql);
+			pstmt.setString(1, id);
+			pstmt.executeUpdate();	
+
+		} catch (Exception se) {
+			se.printStackTrace();
+		}finally {
+			if(pstmt != null)
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					System.out.println(e.getMessage());
+				}
+			if(conn != null)
+				try {
+					conn.close();	//4단계 : DB연결을 끊는다.
+				} catch (Exception e) {
+					System.out.println(e.getMessage());
+				}
+		}	// finally
+		
+		return null;
+	}
 }

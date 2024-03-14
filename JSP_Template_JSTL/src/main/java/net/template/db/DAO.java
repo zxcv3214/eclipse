@@ -273,7 +273,7 @@ public class DAO {
 		}	// finally
 		return list;
 	}
-	public Template_join delete(String id) {
+	public int delete(String id) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		int result = 0;
@@ -285,7 +285,7 @@ public class DAO {
 			String delete_sql = "delete from template_join where id=?";
 			pstmt=conn.prepareStatement(delete_sql);
 			pstmt.setString(1, id);
-			pstmt.executeUpdate();	
+			result=pstmt.executeUpdate();	
 
 		} catch (Exception se) {
 			se.printStackTrace();
@@ -304,6 +304,6 @@ public class DAO {
 				}
 		}	// finally
 		
-		return null;
+		return result;
 	}
 }

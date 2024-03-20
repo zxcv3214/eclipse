@@ -60,6 +60,18 @@ public class BoardFrontController extends HttpServlet {
 			case "/BoardModifyProcess.bo" :
 				action = new BoardModifyProcessAction();
 				break;
+			case "/BoardRely.bo" :
+				action = new BoardRely();
+				break;
+			case "/BoardRelyProcess.bo" :
+				action = new BoardRelyProcessAction();
+				break;
+			case "/BoardDelete.bo" :
+				action = new BoardDeleteAction();
+				break;
+			case "/BoardFileDown.bo" :
+				action = new BoardFileDownAction();
+				break;
 		} //switch (command)
 		
 		forward = action.execute(request, response);

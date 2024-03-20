@@ -60,6 +60,12 @@ public class MemberFrontController extends HttpServlet {
 			case "/logout.net":
 				action = new MemberLogoutAction();
 				break;
+			case "/memberupdate.net" :
+				action = new MemberUpdateAction();
+				break;
+			case"/updateProcess.net" :
+				action = new MemberUpdateProcessAction();
+				break;
 		} //switch (command)
 		
 		forward = action.execute(request, response);

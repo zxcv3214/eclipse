@@ -32,7 +32,7 @@
   <ul class="navbar-nav">
     <c:if test="${!empty id}">
     	<li class="nav-item"><a class="nav-link" href="logout.net">${id} 님(로그아웃)</a></li>
-    	<li class="nav-item"><a class="nav-link" href="memberUpdate.net">정보수정</a></li>
+    	<li class="nav-item"><a class="nav-link" href=memberupdate.net>정보수정</a></li>
     	
     	<c:if test="${id=='admin'}">
     		<%--Drop down --%>

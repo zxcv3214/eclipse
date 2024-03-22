@@ -19,3 +19,12 @@ create sequence com_seq;
 delete comm;
 
 select * from comm;
+
+select comm.*, member.memberfile 
+from comm  inner join member
+on comm.id=member.id
+where comment_board_num = ?
+order by comment_re_ref asc,
+		 comment_re_seq asc;
+		 
+		 

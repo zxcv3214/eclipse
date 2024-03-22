@@ -9,8 +9,7 @@ public class Member {
 	private String email;
 	private String memberfile;
 	
-	
-	
+
 	public String getId() {
 		return id;
 	}

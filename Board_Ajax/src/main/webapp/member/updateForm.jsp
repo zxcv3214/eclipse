@@ -47,6 +47,7 @@
 					<c:set var="src" value="image/profile.png" />
 				</c:if>
 				<c:if test="${!empty memberinfo.memberfile}">
+				<%--두개에 값을 연결할때는 두개 나란히 쓰면 된다. --%>
 					<c:set var="src" value='${"memberupload/"}${memberinfo.memberfile}'/>
 					<input type="hidden" name="check" value="${memberinfo.memberfile}"><%--파일이 있는데 변경하지 않는 경우 --%>
 				</c:if>

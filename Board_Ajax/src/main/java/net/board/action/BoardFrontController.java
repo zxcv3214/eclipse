@@ -1,6 +1,12 @@
 package net.board.action;
 
 import java.io.IOException;
+
+import net.comment.action.CommentAddAction;
+import net.comment.action.CommentDeleteAction;
+import net.comment.action.CommentListAction;
+import net.comment.action.CommentReplyAction;
+import net.comment.action.CommentupdateAction;
 import net.common.action.*;
 
 import jakarta.servlet.RequestDispatcher;
@@ -71,6 +77,21 @@ public class BoardFrontController extends HttpServlet {
 				break;
 			case "/BoardFileDown.bo" :
 				action = new BoardFileDownAction();
+				break;
+			case "/CommentAdd.bo" :
+				action = new CommentAddAction();
+				break;
+			case "/CommentList.bo" :
+				action = new CommentListAction();
+				break;
+			case "/CommentDelete.bo" :
+				action = new CommentDeleteAction();
+				break;
+			case "/Commentupdate.bo" :
+				action = new CommentupdateAction();
+				break;
+			case "/CommentReply.bo" :
+				action = new CommentReplyAction();
 				break;
 		} //switch (command)
 		

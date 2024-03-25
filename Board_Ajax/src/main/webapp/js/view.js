@@ -170,12 +170,27 @@ $(function() {
 	
 	//더보기를 클릭한 경우
 	$(".comment-list").on('click', '.comment-tool-button', function() {        		
-	
+	//더보기를 클릭하면 수정과 삭제 영역이 나타나고 다시 클릭하면 사라져요.
+		$(this).next().toggle();
 	})
 	
 	//수정 후 수정완료를 클릭한 경우
 	$('.comment-area').on('click','.update',function(){
-		
+		const content = $(this).parent().parent().find('textarea').val();
+		if(!content) {//내용없이 등록 클릭한 경우
+		alert("수정할 글을 입력하세요.");
+		return;
+		}
+		const num = $(this).attr('data-id');
+		$.ajax({
+			url : 'CommentUpdate.bo' ,
+			data : {num:num, content:content} ,
+			success : function(rdata) {
+				if(rdata == 1) {
+					getList(option);
+				}//if
+			}//success
+		})//ajax
 	})//수정 후 수정완료를 클릭한 경우
 	
 	

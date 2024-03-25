@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>MCV 게시판 - view</title>
 <jsp:include page="header.jsp" />
-<script src="js/view.js"></script>
+<script src="js/view2.js"></script>
 <link rel="stylesheet" type="text/css" href="css/view.css">
 </head>
 <body>

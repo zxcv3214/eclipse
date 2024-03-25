@@ -3,6 +3,7 @@ package net.comment.db;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -106,5 +107,98 @@ public class CommentDAO {
 		}
 		return array;
 	}//
+
+	public int commentsUpdate(Comment co) {
+		int result=0;
+		String sql = "update comm set content=? "
+					+ "where num = ? ";
+		
+		try(Connection con = ds.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(sql);) {
+			pstmt.setString(1, co.getContent());
+			pstmt.setInt(2, co.getNum());
+			
+			result = pstmt.executeUpdate();
+			if(result == 1) 
+				System.out.println("데이터가 수정 되었습니다.");
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}//commentUpdate()메서드
+
+	public int commentsReply(Comment c) {
+		int result = 0;
+		
+		try(Connection con = ds.getConnection();) {
+			con.setAutoCommit(false);
+			
+			try {
+				reply_update(con, c.getComment_re_ref(), c.getComment_re_seq());
+				result=reply_insert(con, c);
+				con.commit();
+			} 
+			catch (Exception e) {
+				e.printStackTrace(); //오류 확인용
+				if (con != null) {
+					try {
+						con.rollback(); // rollback 합니다.
+					}catch (SQLException ex) {
+						ex.printStackTrace();
+					}
+				}
+			}	
+			con.setAutoCommit(true);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+	private int reply_insert(Connection con, Comment c) throws SQLException {
+		int result= 0;
+		String sql = "insert into comm "
+				+ " values(com_seq.nextval, ?, ?, sysdate, ? ,? ,? ,?)";
+				try(PreparedStatement pstmt = con.prepareStatement(sql);) {
+					pstmt.setString(1, c.getId());
+					pstmt.setString(2, c.getContent());
+					pstmt.setInt(3, c.getComment_board_num());
+					pstmt.setInt(4, c.getComment_re_lev()+1);
+					pstmt.setInt(5, c.getComment_re_seq()+1);
+					pstmt.setInt(6, c.getComment_re_ref());
+					result = pstmt.executeUpdate();
+				}
+		return result;
+	}
+
+	private void reply_update(Connection con, int comment_re_ref, int comment_re_seq) throws SQLException {
+		
+		String update_sql = "update comm "
+						+ "set		comment_re_seq=comment_re_seq +1 "
+						+ "where	comment_re_ref= ? "
+						+ "and		comment_re_seq > ?";
+		try(PreparedStatement pstmt = con.prepareStatement(update_sql);) {
+			pstmt.setInt(1, comment_re_ref);
+			pstmt.setInt(2, comment_re_seq);
+			pstmt.executeUpdate();
+		}
+		
+	}
+
+	public int commentsDelete(int num) {
+	    int	result = 0;
+	    String Delete_sql= "delete comm where num=? ";
+	    
+	    try(Connection con = ds.getConnection();
+	    		PreparedStatement pstmt = con.prepareStatement(Delete_sql);){
+	    	pstmt.setInt(1, num);
+	    	result = pstmt.executeUpdate();
+	    	if(result == 1) 
+	    		System.out.println("데이터가 삭제 되었습니다.");
+	    }catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}//commentsDelete() 메서드
 
 }

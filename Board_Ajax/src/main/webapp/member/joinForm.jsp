@@ -15,6 +15,7 @@ $(function() {
 			//[A=Za=z0-9_]의 의미가 \w
 			const pattern = /^\w{5,12}$/;
 			const id = $(this).val();
+			
 			if (!pattern.test(id)) {
 				$("#id_message").css('color', 'red').html("영문자 숫자 _로 5~12자 가능합니다.");
 				checkid=false;

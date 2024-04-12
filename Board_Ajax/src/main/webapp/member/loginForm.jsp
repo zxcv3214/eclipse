@@ -2,7 +2,6 @@
 <html>
 <head>
 <title>로그인 페이지</title>
-<link href="${pageContext.request.contextPath}/css/login.css" type="text/css" rel="stylesheet">
 <script src="${pageContext.request.contextPath}/js/jquery-3.7.1.js"></script>
 
 <script>
@@ -10,7 +9,6 @@ $(function() {
 	$(".join").click(function () {
 		location.href = "join.net";
 	});
-	
 	const id = '${cookie_id}';
 	if (id) {
 		$("#id").val(id);

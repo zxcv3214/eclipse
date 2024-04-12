@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+ <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -48,7 +48,7 @@
 				</c:if>
 				<c:if test="${!empty memberinfo.memberfile}">
 				<%--두개에 값을 연결할때는 두개 나란히 쓰면 된다. --%>
-					<c:set var="src" value='${"memberupload/"}${memberinfo.memberfile}'/>
+					<c:set var="src" value='````${"memberupload/"}${memberinfo.memberfile}'/>
 					<input type="hidden" name="check" value="${memberinfo.memberfile}"><%--파일이 있는데 변경하지 않는 경우 --%>
 				</c:if>
 				<img alt="profile" src="${src}" width="20px">

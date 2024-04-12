@@ -57,7 +57,7 @@ public class BoardDAO {
 		String board_list_sql = "select *  from (select rownum rnum, j.* "
 				+ "		    from (select board.*, nvl(cnt,0) cnt "
 				+ "     			     from board left outer join (select comment_board_num, count(*) cnt"
-				+ "								          			 from comm										                                  "
+				+ "								          			 from comm										           	       "
 				+ "													 group by comment_board_num) "
 				+ "    			     on board_num=comment_board_num "
 				+ "   			     order by BOARD_RE_REF desc, BOARD_RE_SEQ asc) j "

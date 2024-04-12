@@ -41,7 +41,7 @@
 			</tr>
 			<tr>
 				<td colspan="2">
-				<a href="memberList.ne">리스트로 돌아가기</a>
+				<a href="memberList.net">리스트로 돌아가기</a>
 				</td>
 			</tr>
 	</table>

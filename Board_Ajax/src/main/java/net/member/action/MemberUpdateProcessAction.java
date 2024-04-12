@@ -74,6 +74,7 @@ public class MemberUpdateProcessAction implements Action {
 			out.println("</script>");
 			out.close();
 			return null;
+			
 		} catch (IOException ex) {
 			ex.printStackTrace();
 			ActionForward forward = new ActionForward();
